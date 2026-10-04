@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="AnyList - Simple, organized and customizable list management.">
+
+    <title>AnyList</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HOME PAGE
+    ====================================================== -->
+
+    <main id="homePage">
+
+        <header class="topbar">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <h1>
+                        AnyList
+                    </h1>
+
+                    <p>
+                        Simple. Organized. Yours.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="top-actions">
+
+
+                <!-- =================================================
+                     NOTIFICATIONS BUTTON
+                ================================================== -->
+
+                <button
+                    id="notificationsBtn"
+                    class="icon-btn"
+                    type="button"
+                    title="Notifications"
+                >
+
+                    🔔
+
+                    <span id="notificationBadge">
+                        0
+                    </span>
+
+                </button>
+
+
+                <!-- =================================================
+                     WEBSITE SETTINGS BUTTON
+                ================================================== -->
+
+                <button
+                    id="appSettingsBtn"
+                    class="icon-btn"
+                    type="button"
+                    title="Website Settings"
+                >
+
+                    ⚙
+
+                </button>
+
+
+                <!-- =================================================
+                     NEW LIST
+                ================================================== -->
+
+                <button
+                    id="createListBtn"
+                    class="primary-btn"
+                    type="button"
+                >
+
+                    + New List
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+
+        <section class="dashboard">
+
+
+            <div class="dashboard-heading">
+
+                <span class="eyebrow">
+                    YOUR WORKSPACE
+                </span>
+
+                <h2>
+                    My Lists
+                </h2>
+
+                <p>
+                    Create, organize and track your lists.
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 TOOLBAR
+            ================================================== -->
+
+            <section class="toolbar">
+
+                <div class="search-box">
+
+                    <span>
+                        ⌕
+                    </span>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search your lists..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <select
+                    id="sortSelect"
+                    aria-label="Sort lists"
+                >
+
+                    <option value="newest">
+                        Newest
+                    </option>
+
+                    <option value="oldest">
+                        Oldest
+                    </option>
+
+                    <option value="changed">
+                        Recently Changed
+                    </option>
+
+                    <option value="az">
+                        A → Z
+                    </option>
+
+                    <option value="za">
+                        Z → A
+                    </option>
+
+                    <option value="custom">
+                        Custom Order
+                    </option>
+
+                </select>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 LIST CARDS
+            ================================================== -->
+
+            <section
+                id="listsContainer"
+                class="lists-container"
+            >
+
+            </section>
+
+
+
+            <!-- =================================================
+                 HOME COMMAND CENTER
+            ================================================== -->
+
+            <section class="command-section home-command-section">
+
+                <div class="command-header">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            QUICK COMMAND
+                        </span>
+
+                        <h2>
+                            Command Center
+                        </h2>
+
+                        <p>
+                            Manage your lists quickly with commands.
+                        </p>
+
+                    </div>
+
+
+                    <div class="command-symbol">
+                        &gt;_
+                    </div>
+
+                </div>
+
+
+
+                <div class="command-box">
+
+                    <div class="command-label">
+                        COMMAND
+                    </div>
+
+
+                    <div class="command-input-row">
+
+                        <span class="command-prefix">
+                            &gt;
+                        </span>
+
+
+                        <input
+                            type="text"
+                            id="homeCommandInput"
+                            placeholder="list(ch1-ch10)"
+                            autocomplete="off"
+                            spellcheck="false"
+                        >
+
+
+                        <button
+                            id="homeRunCommandBtn"
+                            type="button"
+                            class="command-run-btn"
+                        >
+
+                            Run
+
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="homeCommandOutput"
+                        class="command-output"
+                    >
+
+                    </div>
+
+
+                    <div class="command-example">
+
+                        <span>
+                            Create multiple lists
+                        </span>
+
+                        <code>
+                            list(ch1-ch10)
+                        </code>
+
+                    </div>
+
+
+                    <div class="command-example">
+
+                        <span>
+                            Creates
+                        </span>
+
+                        <code>
+                            ch-1, ch-2, ch-3 ... ch-10
+                        </code>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 FOOTER
+            ================================================== -->
+
+            <footer class="site-footer">
+
+                <div class="footer-brand">
+
+                    <div class="footer-logo">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            AnyList
+                        </strong>
+
+                        <span>
+                            Simple. Organized. Yours.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="footer-info">
+
+                    Made by
+
+                    <strong>
+                        nightmare_core 2810
+                    </strong>
+
+                </div>
+
+
+                <div class="footer-copy">
+                    © 2026 AnyList
+                </div>
+
+            </footer>
+
+        </section>
+
+    </main>
+
+
+
+
+
+    <!-- =====================================================
+         LIST PAGE
+    ====================================================== -->
+
+    <main
+        id="listPage"
+        class="hidden"
+    >
+
+
+        <header class="list-header">
+
+
+            <button
+                id="backBtn"
+                class="back-btn"
+                type="button"
+            >
+
+                ← Back
+
+            </button>
+
+
+            <div class="list-title-area">
+
+                <h1 id="listTitle">
+                    List
+                </h1>
+
+                <p id="lastChanged">
+                    Last changed: -
+                </p>
+
+            </div>
+
+
+            <button
+                id="listSettingsBtn"
+                class="secondary-btn"
+                type="button"
+            >
+
+                ⚙ Settings
+
+            </button>
+
+        </header>
+
+
+
+        <!-- =================================================
+             LIST CONTENT
+        ================================================== -->
+
+        <div class="list-layout">
+
+
+            <!-- =================================================
+                 LEFT SIDE
+            ================================================== -->
+
+            <section class="items-section">
+
+
+                <div class="add-item-box">
+
+                    <input
+                        type="text"
+                        id="itemInput"
+                        placeholder="Add a new item..."
+                        autocomplete="off"
+                    >
+
+
+                    <button
+                        id="addItemBtn"
+                        type="button"
+                    >
+
+                        Add Item
+
+                    </button>
+
+                </div>
+
+
+                <div id="itemsContainer">
+
+                </div>
+
+
+
+                <!-- =================================================
+                     LIST COMMAND
+                ================================================== -->
+
+                <section class="command-section list-item-command-section">
+
+
+                    <div class="command-header">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                ITEM COMMAND
+                            </span>
+
+                            <h2>
+                                Quick Add Items
+                            </h2>
+
+                            <p>
+                                Add or manage multiple items at once.
+                            </p>
+
+                        </div>
+
+
+                        <div class="command-symbol">
+                            &gt;_
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="command-box">
+
+                        <div class="command-label">
+                            COMMAND
+                        </div>
+
+
+                        <div class="command-input-row">
+
+                            <span class="command-prefix">
+                                &gt;
+                            </span>
+
+
+                            <input
+                                type="text"
+                                id="listCommandInput"
+                                placeholder="items(Apple,Milk,Bread)"
+                                autocomplete="off"
+                                spellcheck="false"
+                            >
+
+
+                            <button
+                                id="listRunCommandBtn"
+                                type="button"
+                                class="command-run-btn"
+                            >
+
+                                Run
+
+                            </button>
+
+                        </div>
+
+
+                        <div
+                            id="listCommandOutput"
+                            class="command-output"
+                        >
+
+                        </div>
+
+
+                        <div class="command-example">
+
+                            <span>
+                                Add multiple
+                            </span>
+
+                            <code>
+                                items(Apple,Milk,Bread)
+                            </code>
+
+                        </div>
+
+
+                        <div class="command-example">
+
+                            <span>
+                                Create item range
+                            </span>
+
+                            <code>
+                                itemlist(ch1-ch10)
+                            </code>
+
+                        </div>
+
+
+                        <div class="command-example">
+
+                            <span>
+                                Delete item range
+                            </span>
+
+                            <code>
+                                itemlistdel(ch1-ch10)
+                            </code>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 RIGHT INFO PANEL
+            ================================================== -->
+
+            <aside class="info-panel">
+
+
+                <div class="info-heading">
+
+                    <span class="eyebrow">
+                        OVERVIEW
+                    </span>
+
+                    <h2>
+                        List Info
+                    </h2>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <span>
+                        Total Items
+                    </span>
+
+                    <strong id="totalItems">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <span>
+                        Completed
+                    </span>
+
+                    <strong id="completedItems">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <span>
+                        Remaining
+                    </span>
+
+                    <strong id="remainingItems">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="progress-header">
+
+                    <span>
+                        Progress
+                    </span>
+
+                    <strong id="progressPercent">
+                        0%
+                    </strong>
+
+                </div>
+
+
+                <div class="progress-bar">
+
+                    <div id="progressFill">
+                    </div>
+
+                </div>
+
+
+                <div class="date-info">
+
+                    <p>
+
+                        <span>
+                            Created
+                        </span>
+
+                        <strong id="createdDate">
+                            -
+                        </strong>
+
+                    </p>
+
+
+                    <p>
+
+                        <span>
+                            Last Changed
+                        </span>
+
+                        <strong id="updatedDate">
+                            -
+                        </strong>
+
+                    </p>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+
+
+        <!-- =================================================
+             LIST FOOTER
+        ================================================== -->
+
+        <footer class="site-footer list-footer">
+
+
+            <div class="footer-brand">
+
+                <div class="footer-logo">
+                    ✓
+                </div>
+
+                <div>
+
+                    <strong>
+                        AnyList
+                    </strong>
+
+                    <span>
+                        Simple. Organized. Yours.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-info">
+
+                Made by
+
+                <strong>
+                    nightmare_core 2810
+                </strong>
+
+            </div>
+
+
+            <div class="footer-copy">
+                © 2026 AnyList
+            </div>
+
+        </footer>
+
+    </main>
+
+
+
+
+
+    <!-- =====================================================
+         CREATE LIST MODAL
+    ====================================================== -->
+
+    <div
+        id="createModal"
+        class="modal hidden"
+    >
+
+        <div class="modal-content">
+
+
+            <div class="modal-heading">
+
+                <span class="modal-icon">
+                    ＋
+                </span>
+
+                <div>
+
+                    <h2>
+                        Create New List
+                    </h2>
+
+                    <p>
+                        Give your new list a name.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <label for="newListName">
+                List Name
+            </label>
+
+
+            <input
+                type="text"
+                id="newListName"
+                placeholder="e.g. Shopping List"
+                autocomplete="off"
+            >
+
+
+            <div class="modal-buttons">
+
+
+                <button
+                    id="cancelCreateBtn"
+                    class="secondary-btn"
+                    type="button"
+                >
+
+                    Cancel
+
+                </button>
+
+
+                <button
+                    id="confirmCreateBtn"
+                    class="primary-btn"
+                    type="button"
+                >
+
+                    Create List
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <!-- =====================================================
+         LIST SETTINGS MODAL
+    ====================================================== -->
+
+    <div
+        id="settingsModal"
+        class="modal hidden"
+    >
+
+        <div class="modal-content">
+
+
+            <div class="modal-heading">
+
+                <span class="modal-icon">
+                    ⚙
+                </span>
+
+                <div>
+
+                    <h2>
+                        List Settings
+                    </h2>
+
+                    <p>
+                        Customize this list only.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <label for="settingsListName">
+                List Name
+            </label>
+
+
+            <input
+                type="text"
+                id="settingsListName"
+                autocomplete="off"
+            >
+
+
+            <label for="backgroundColor">
+                List Background
+            </label>
+
+
+            <input
+                type="color"
+                id="backgroundColor"
+                value="#ffffff"
+            >
+
+
+            <label class="setting-toggle">
+
+                <span>
+                    🌈 Rainbow Background
+                </span>
+
+                <input
+                    type="checkbox"
+                    id="rainbowBackground"
+                >
+
+            </label>
+
+
+            <p class="setting-help">
+                This affects only this list.
+            </p>
+
+
+            <label for="itemColor">
+                List Item Color
+            </label>
+
+
+            <input
+                type="color"
+                id="itemColor"
+                value="#ffffff"
+            >
+
+
+            <p class="setting-help">
+                Changes the background of list items.
+            </p>
+
+
+            <div class="modal-buttons">
+
+
+                <button
+                    id="deleteListBtn"
+                    class="danger-btn"
+                    type="button"
+                >
+
+                    Delete List
+
+                </button>
+
+
+                <button
+                    id="closeSettingsBtn"
+                    class="secondary-btn"
+                    type="button"
+                >
+
+                    Cancel
+
+                </button>
+
+
+                <button
+                    id="saveSettingsBtn"
+                    class="primary-btn"
+                    type="button"
+                >
+
+                    Save Changes
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <!-- =====================================================
+         APP SETTINGS MODAL
+    ====================================================== -->
+
+    <div
+        id="appSettingsModal"
+        class="modal hidden"
+    >
+
+        <div class="modal-content">
+
+
+            <div class="modal-heading">
+
+                <span class="modal-icon">
+                    🎨
+                </span>
+
+                <div>
+
+                    <h2>
+                        Website Settings
+                    </h2>
+
+                    <p>
+                        Customize your AnyList experience.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <label for="appBackgroundColor">
+                Background Color
+            </label>
+
+
+            <input
+                type="color"
+                id="appBackgroundColor"
+                value="#f4f6f8"
+            >
+
+
+            <label for="appBackgroundImage">
+                Background Image
+            </label>
+
+
+            <input
+                type="file"
+                id="appBackgroundImage"
+                accept="image/*"
+            >
+
+
+            <p class="setting-help">
+                Choose an image from your computer.
+            </p>
+
+
+            <label class="setting-toggle">
+
+                <span>
+                    🌈 Rainbow Background
+                </span>
+
+                <input
+                    type="checkbox"
+                    id="appRainbowBackground"
+                >
+
+            </label>
+
+
+
+            <!-- =================================================
+                 COMMAND HELP
+            ================================================== -->
+
+            <div class="command-help-wrapper">
+
+
+                <button
+                    id="commandHelpToggle"
+                    class="command-help-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    title="Show command list"
+                >
+
+                    &gt;_
+
+                </button>
+
+
+                <div
+                    id="commandHelpPanel"
+                    class="command-help-panel hidden"
+                >
+
+
+                    <div class="command-help-header">
+
+                        <h3>
+                            Command List
+                        </h3>
+
+                        <p>
+                            Available commands in AnyList.
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- HOME COMMANDS -->
+
+                    <div class="command-help-group">
+
+                        <span class="command-help-label">
+                            HOME COMMANDS
+                        </span>
+
+
+                        <div class="command-help-item">
+
+                            <code>
+                                list(ch1-ch10)
+                            </code>
+
+                            <p>
+                                Creates lists from ch-1 to ch-10.
+                            </p>
+
+                        </div>
+
+
+                        <div class="command-help-item">
+
+                            <code>
+                                del(list-MyList)
+                            </code>
+
+                            <p>
+                                Deletes a list by its name.
+                            </p>
+
+                        </div>
+
+
+                        <div class="command-help-item">
+
+                            <code>
+                                del(lists-1,3,5)
+                            </code>
+
+                            <p>
+                                Deletes multiple lists by number.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- LIST COMMANDS -->
+
+                    <div class="command-help-group">
+
+                        <span class="command-help-label">
+                            LIST COMMANDS
+                        </span>
+
+
+                        <div class="command-help-item">
+
+                            <code>
+                                items(Apple,Milk,Bread)
+                            </code>
+
+                            <p>
+                                Adds multiple items at once.
+                            </p>
+
+                        </div>
+
+
+                        <div class="command-help-item">
+
+                            <code>
+                                itemlist(ch1-ch10)
+                            </code>
+
+                            <p>
+                                Creates items from ch-1 to ch-10.
+                            </p>
+
+                        </div>
+
+
+                        <div class="command-help-item">
+
+                            <code>
+                                itemlistdel(ch1-ch10)
+                            </code>
+
+                            <p>
+                                Deletes items from ch-1 to ch-10.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="modal-buttons">
+
+
+                <button
+                    id="resetAppBackgroundBtn"
+                    class="danger-btn"
+                    type="button"
+                >
+
+                    Reset Background
+
+                </button>
+
+
+                <button
+                    id="closeAppSettingsBtn"
+                    class="secondary-btn"
+                    type="button"
+                >
+
+                    Cancel
+
+                </button>
+
+
+                <button
+                    id="saveAppSettingsBtn"
+                    class="primary-btn"
+                    type="button"
+                >
+
+                    Save Changes
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <!-- =====================================================
+         NOTIFICATIONS MODAL
+    ====================================================== -->
+
+    <div
+        id="notificationsModal"
+        class="modal hidden"
+    >
+
+        <div class="modal-content">
+
+
+            <!-- =================================================
+                 NOTIFICATION HEADER
+            ================================================== -->
+
+            <div class="modal-heading">
+
+                <span class="modal-icon">
+                    🔔
+                </span>
+
+                <div>
+
+                    <h2>
+                        Your Tasks
+                    </h2>
+
+                    <p>
+                        See what is due, overdue, or completed.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 NOTIFICATION SUMMARY
+            ================================================== -->
+
+            <div class="notification-summary">
+
+
+                <div>
+
+                    <span>
+                        Overdue
+                    </span>
+
+                    <strong id="notificationOverdueCount">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Due Today
+                    </span>
+
+                    <strong id="notificationTodayCount">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Due Soon
+                    </span>
+
+                    <strong id="notificationSoonCount">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Completed
+                    </span>
+
+                    <strong id="notificationCompletedCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 NOTIFICATION ITEMS
+            ================================================== -->
+
+            <div
+                id="notificationList"
+                class="notification-list"
+            >
+
+            </div>
+
+
+
+            <!-- =================================================
+                 NOTIFICATION BUTTONS
+            ================================================== -->
+
+            <div class="modal-buttons">
+
+
+                <button
+                    id="closeNotificationsBtn"
+                    class="secondary-btn"
+                    type="button"
+                >
+
+                    Close
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script
+        type="module"
+        src="js/script.js"
+    >
+    </script>
+
+
+    <script
+        type="module"
+        src="js/Home-command.js"
+    >
+    </script>
+
+
+    <script
+        type="module"
+        src="js/command.js"
+    >
+    </script>
+
+
+    <!-- NEW HOME LIST COMMAND SCRIPT -->
+
+    <script
+        type="module"
+        src="js/cadeList.js"
+    >
+    </script>
+
+
+    <script
+        type="module"
+        src="js/multilist.js"
+    >
+    </script>
+
+
+</body>
+
+</html>
